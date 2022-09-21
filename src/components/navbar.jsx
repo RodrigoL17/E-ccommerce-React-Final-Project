@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import Barrabusqueda from "./barrabusqueda";
-import UlLinks from './ul-links';
-
+import UlLinks from "./ul-links";
+import CartIcon from "./cart-icon";
 
 const Navbar = () => {
-    return (
-        <>
-          <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+  return (
+    <>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary py-3">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             Navbar
@@ -23,13 +23,14 @@ const Navbar = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarColor01">
-            <UlLinks/>
-            <Barrabusqueda/>
+            <UlLinks />
+            <CartIcon/>
+            <Barrabusqueda busqueda={"Buscar"}/>
           </div>
         </div>
-      </nav>  
-        </>
-    );
-}
+      </nav>
+    </>
+  );
+};
 
 export default Navbar;

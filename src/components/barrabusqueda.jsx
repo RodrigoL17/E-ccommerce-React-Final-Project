@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
 
-const Barrabusqueda = () => {
-    return (
-        <>
-         <form className="d-flex">
-              <input
-                className="form-control me-sm-2"
-                type="text"
-                placeholder="Search"
-              />
-              <button className="btn btn-secondary my-2 my-sm-0" type="submit">
-                Search
-              </button>
-            </form>   
-        </>
-    );
-}
+const Barrabusqueda = ({busqueda}) => {
+  return (
+    <>
+      <form className="d-flex ms-4">
+        <input
+          className="form-control me-sm-2 py-2"
+          type="text"
+          placeholder= {busqueda}
+        />
+        <button className="btn btn-light my-1 my-sm-0 py-2" type="submit">
+          {busqueda}
+        </button>
+      </form>
+    </>
+  );
+};
 
 export default Barrabusqueda;
