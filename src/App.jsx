@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./components/navbar";
-import ListItemContainer from "./components/list-item-container";
+import Card from "./components/card";
 
 
 
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Navbar/>
       {
-        //<ListItemContainer/>
+        //<Card/>
       }
     </div>
   );
