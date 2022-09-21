@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = () => {
+const ListItemContainer = () => {
     return (
         <>
           <div className="card mb-3">
@@ -42,4 +42,4 @@ const Card = () => {
     );
 }
 
-export default Card;
+export default ListItemContainer;

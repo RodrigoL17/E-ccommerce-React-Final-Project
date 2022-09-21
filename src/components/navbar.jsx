@@ -1,7 +1,7 @@
 import React from "react";
 import Barrabusqueda from "./barrabusqueda";
 import UlLinks from "./ul-links";
-import CartIcon from "./cart-icon";
+import CartIcon from "./cart-widget";
 
 const Navbar = () => {
   return (
