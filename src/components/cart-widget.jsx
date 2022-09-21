@@ -4,20 +4,18 @@ import Badge from "./badge";
 const CartIcon = () => {
   return (
     <>
-    <div className="nav-item dropdown cart-icon">
+    <div className="dropdown cart-icon">
         <button
-          className="dropdown-toggle btn btn-light py-2"
+          className="dropdown-toggle btn btn-light btn-sm"
           data-bs-toggle="dropdown"
-          href="#"
-          role="button"
-          aria-haspopup="true"
           aria-expanded="false"
+          data-bs-offset="100,200"
         >
           <i class="bi bi-cart3"></i>
           <Badge/>
         </button>
-        <div className="dropdown-menu">
-          
+        <div className="dropdown-menu mt-2">
+        
         </div>
       </div>
     </>
