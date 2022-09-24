@@ -1,14 +1,14 @@
 import React from "react";
-import Barrabusqueda from "./barrabusqueda";
-import UlLinks from "./ul-links";
-import CartIcon from "./cart-widget";
+import Barrabusqueda from "../navbar/barrabusqueda";
+import UlLinks from "../navbar/ul-links";
+import CartIcon from "../navbar/cart-widget";
 
 const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary py-3">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand">
             Navbar
           </a>
           <button

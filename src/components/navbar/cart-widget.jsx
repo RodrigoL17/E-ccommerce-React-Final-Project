@@ -1,6 +1,6 @@
 import React from "react";
-import Badge from "./badge";
-import ListItemContainer from "./list-item-container";
+import Badge from "../cart/badge";
+import ListItemContainer from "../content/list-item-container";
 
 const CartIcon = () => {
   return (
@@ -14,7 +14,6 @@ const CartIcon = () => {
           <i class="bi bi-cart3"></i>
           <Badge/>
         </button>
-        <ListItemContainer/>
       </div>
     </>
     

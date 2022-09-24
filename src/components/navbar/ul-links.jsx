@@ -1,6 +1,6 @@
 import React from "react";
 import DropdownMenu from "./dropdown-menu";
-import Link from "./link";
+import Link from "../layout/link"
 
 const UlLinks = () => {
   return (
