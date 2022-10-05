@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import consultarAPI from "../../utilities/funciones_utiles";
 import Card from "../layout/card";
 
-const Categoria = () => {
+const Category = () => {
   const [productos, setProductos] = useState([]);
   const {categoria} = useParams()
   useEffect(() => {
@@ -11,7 +11,7 @@ const Categoria = () => {
     const resultado = prod.filter(producto => producto.category === categoria.toLowerCase())
     setProductos(resultado)
    })
-  }, []);
+  }, [categoria]);
 
   return (
     <div className="row list-item-container">
@@ -32,4 +32,4 @@ const Categoria = () => {
   );
 };
 
-export default Categoria;
+export default Category;

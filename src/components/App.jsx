@@ -8,7 +8,7 @@ import Carrito from "./content/carrito";
 import Contacto from "./content/contacto";
 import ListItemContainer from "./content/list-item-container";
 import DetailItem from "./content/detail-item";
-import Categoria from "./content/categoria";
+import Categoria from "./content/category";
 
 
 
