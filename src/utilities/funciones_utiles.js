@@ -4,3 +4,4 @@ const consultarAPI = async () => {
     return data.products
 }
  export default consultarAPI
+

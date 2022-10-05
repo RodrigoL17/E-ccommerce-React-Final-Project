@@ -1,0 +1,70 @@
+.cart-icon{
+    margin-right: 0.5rem;
+}
+
+.bi-cart3{
+    font-size: 1.25rem;
+}
+
+.list-item-container{
+    margin: 1rem 0;
+    gap: 1rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.py-3 {
+     padding-top: 4px !important;
+     padding-bottom: 4px !important; 
+}
+
+.logo-img{
+    object-fit: contain;
+    max-width: 6rem;
+    border-radius: 1rem;
+}
+
+.nav-link-icon{
+    font-size: 1.4rem;
+}
+
+.categorias{
+    margin-top: 0.3rem;
+    font-weight: bold;
+}
+
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.5s ease 0.7s;
+    visibility: visible;
+}
+[data-title]:after {
+    content: attr(data-title);
+    background-color: black ;
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    padding: 2px 5px ;
+    font-weight: bold;
+    border-radius: 8px;
+    top:2.8rem;
+    left:2rem;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border: 1px solid #111111;
+    z-index: 99999;
+    visibility: hidden;
+}
+[data-title] {
+    position: relative;
+}
+
+.dropdown-menu{
+    --bs-dropdown-bg: rgba(240, 245, 250);
+}
+
+.dropdown-item{
+    font-weight: bold;
+}
+
