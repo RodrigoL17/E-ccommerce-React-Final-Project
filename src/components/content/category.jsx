@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import consultarAPI from "../../utilities/funciones_utiles";
+import {consultarAPI} from "../../utilities/funciones_utiles";
 import Card from "../layout/card";
 
 const Category = () => {

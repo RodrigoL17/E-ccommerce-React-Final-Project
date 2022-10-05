@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import consultarAPI from "../../utilities/funciones_utiles";
+import {consultarAPI} from "../../utilities/funciones_utiles";
 import Card from "../layout/card";
 
 const ListItemContainer = () => {

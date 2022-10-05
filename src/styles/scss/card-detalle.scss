@@ -1,9 +1,30 @@
-.card-detalle{
-    margin: 1rem;
-    background-image: linear-gradient(45deg, rgb(255,255,255) 30%, rgb(194, 220, 255));
-
+.card-detalle {
+  margin: 1rem;
+  background-image: linear-gradient(
+    45deg,
+    rgb(255, 255, 255) 30%,
+    rgb(194, 220, 255)
+  );
 }
 
-.descripcion{
-    font-weight: bold;
+.descripcion {
+  font-weight: bold;
+}
+
+.col-5 {
+  min-height: 31px;
+}
+
+.card-body {
+  .bi,
+  .bi-star-fill,
+  .bi-star {
+    font-size: 14px;
+}
+.agregar-carrito{
+    font-size: 1.1rem;
+}
+.btn-agregar-carrito{
+    margin-left: 1rem;
+}
 }
