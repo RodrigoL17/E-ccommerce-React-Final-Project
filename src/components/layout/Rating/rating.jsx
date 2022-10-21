@@ -8,14 +8,14 @@ const Rating = ({rating}) => {
         let stars = [];
       
         for (i; i < numberOfFullStars; i++) {
-          stars.push(<i className="bi bi-star-fill"></i>);
+          stars.push(<i className="bi bi-star-fill" key={i}></i>);
         }
         if (hasHalfStar) {
-          stars.push(<i className="bi bi-star-half"></i>);
+          stars.push(<i className="bi bi-star-half" key={i}></i>);
           i++;
         }
         for (i; i < numberOfStars; i++) {
-          stars.push(<i className="bi bi-star"></i>);
+          stars.push(<i className="bi bi-star" key={i}></i>);
         }
       
         return stars;

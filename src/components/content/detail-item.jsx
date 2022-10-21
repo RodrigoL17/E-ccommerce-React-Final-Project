@@ -1,22 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { consultarAPI } from "../../utilities/funciones_utiles";
 import Carousel from "../layout/carousel/carousel";
 import Rating from "../layout/Rating/rating";
 import ButtonGroup from "../layout/button-group";
 
+
 const DetailItem = () => {
   const [producto, setProducto] = useState(null);
   const { id } = useParams();
+
+  
   useEffect(() => {
     consultarAPI().then((productos) => {
       const prodBuscado = productos.find(
         (productoArray) => productoArray.id === parseInt(id)
       );
-      console.log("lala", prodBuscado);
       setProducto(prodBuscado);
     });
   }, []);
+
+
   return (
     <>
       {producto && (
@@ -31,7 +35,7 @@ const DetailItem = () => {
             </div>
             <div className="col-7">
               <div className="card-body">
-                <h5 className="card-title text-primary">{producto.title}</h5>
+                <h3 className="card-title text-primary">{producto.title}</h3>
                 <p className="card-text">
                   Valoracion:{" "}
                   <span className="precio text-primary">{producto.rating}</span>{" "}
@@ -56,8 +60,7 @@ const DetailItem = () => {
                   </small>
                 </p>
                 <div>
-                  <ButtonGroup stock={producto.stock}/>
-                  <button type="button" className="btn btn-outline-primary btn-sm btn-agregar-carrito" data-title="Agregar al carrito"><i className="bi bi-cart-plus-fill agregar-carrito"></i></button>
+                  <ButtonGroup stock={producto.stock} producto={producto}/>
                 </div>
               </div>
             </div>

@@ -1,4 +1,5 @@
 .card-detalle {
+  font-size: 1.2rem;
   margin: 1rem;
   background-image: linear-gradient(
     45deg,
@@ -16,15 +17,20 @@
 }
 
 .card-body {
-  .bi,
-  .bi-star-fill,
-  .bi-star {
-    font-size: 14px;
-}
+
 .agregar-carrito{
     font-size: 1.1rem;
 }
 .btn-agregar-carrito{
     margin-left: 1rem;
+}
+.signo{
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.cantidad{
+  max-width: 8rem;
+  font-weight: bold;
+  font-size: 1rem;
 }
 }
