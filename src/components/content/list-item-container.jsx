@@ -10,7 +10,7 @@ const ListItemContainer = () => {
   }, []);
   return (
     <div className="row list-item-container">
-      {productos?.map(({ images, title, brand, description, price, stock,id }) => (
+      {productos?.map(({ images, title, brand, description, price, stock,id}) => (
         <Card
           img={images}
           titulo={title}
@@ -19,6 +19,7 @@ const ListItemContainer = () => {
           precio={price}
           stock={stock}
           id={id}
+          key={id}
         />
       ))}
     </div>

@@ -25,6 +25,7 @@ const Category = () => {
             precio={price}
             stock={stock}
             id={id}
+            key={id}
           />
         )
       )}

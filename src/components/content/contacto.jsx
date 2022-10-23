@@ -2,7 +2,7 @@ import React from "react";
 
 const Contacto = () => {
   return (
-      <div className="col-9 ms-5 mt-5 formulario">
+      <div className="col-9 ms-5 mt-5 mb-5 formulario">
         <h2 className="text-center text-primary">Contactanos</h2>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label text-primary">

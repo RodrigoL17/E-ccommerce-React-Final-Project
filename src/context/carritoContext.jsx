@@ -1,20 +1,11 @@
-import React, {useState, createContext} from 'react';
+import React, {useState, createContext, useEffect} from 'react';
 
 const CarritoContext = createContext()
 
 const CarritoProvider = (props) => {
 
-    const [carrito, setCarrito] = useState([
-        {
-            "id": 8,
-            "cantidad": 1
-        },
-        {
-            "id": 2,
-            "cantidad": 4
-        }
-    ]);
-
+    const [carrito, setCarrito] = useState([]);
+   
     const agregarAlCarrito = (prod, cant) => {
         const aux = carrito
      let indice = aux.findIndex(producto => producto.id == prod.id)
@@ -22,20 +13,17 @@ const CarritoProvider = (props) => {
      if (indice != -1){
         aux[indice].cantidad = cant
      } else {
-        const prodCarrito = {id: prod.id, cantidad: cant}
+        const prodCarrito = {...prod, cantidad: cant}
         aux.push(prodCarrito)
      }
-     setCarrito(aux)
-     console.log(carrito)
+     setCarrito([...aux])
     }
 
     const quitarProducto = (prod) => {
         const aux = carrito
         let indice = aux.findIndex(producto => producto.id == prod.id)
-
         aux.splice(indice,1)
-        setCarrito(aux)
-        console.log(carrito)
+        setCarrito([...aux]) 
     }
 
     return (
