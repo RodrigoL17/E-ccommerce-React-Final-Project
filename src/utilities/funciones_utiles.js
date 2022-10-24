@@ -13,7 +13,7 @@ const confirmacionDeCompra = ()=> {
         icon: 'success',
         title: "Tu compra se ha realizado con exito",
         showConfirmButton: false,
-        timer: 1500
+        timer: 2500
       })
 }
 

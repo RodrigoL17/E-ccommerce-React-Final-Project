@@ -67,8 +67,8 @@ const Checkout = () => {
         </div>
         <div className="botones-formulario">
         <Link type="button" className="btn btn-outline-primary" to="/Carrito">Volver</Link>
-        <Link type="submit" className="btn btn-outline-primary" onClick={() => {confirmacionDeCompra()
-        vaciarCarrito()}} to="/">Finalizar Compra</Link>
+        <Link type="button" className="btn btn-outline-primary" onClick={() => {confirmacionDeCompra(); vaciarCarrito();
+ }} to="/">Finalizar Compra</Link>
         </div>
       </div>
         </>
