@@ -15,9 +15,6 @@ const UlLinks = () => {
         <Link className="nav-link" data-title="Contacto" to="/Contacto">
         <i className="bi bi-chat-text-fill nav-link-icon"></i>
         </Link>
-        <Link className="nav-link" data-title="Nosotros" to="/About">
-        <i className="bi bi-people-fill nav-link-icon"></i>
-        </Link>
         <DropdownMenu />
       </ul>
     </>

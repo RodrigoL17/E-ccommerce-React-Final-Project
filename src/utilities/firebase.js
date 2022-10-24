@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { collection, addDoc, getFirestore, getDocs, getDoc } from "firebase/firestore";
+import { collection, addDoc, getFirestore, getDocs, getDoc, doc, updateDoc} from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -41,4 +41,9 @@ const getProductos = async () => {
     return items
 }
 
-export {cargarBaseDeDatos, getProductos}
+const updateProducto = async (id, info) => {
+    const estado = await updateDoc(doc(db, "products", id), info)
+    return estado
+}
+
+export {cargarBaseDeDatos, getProductos, updateProducto}

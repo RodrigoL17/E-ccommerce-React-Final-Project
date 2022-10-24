@@ -4,7 +4,7 @@ import "../styles/scss/card.scss"
 import "../styles/scss/card-detalle.scss"
 import "../styles/scss/formulario.scss"
 import Navbar from "./content/navbar";
-import About from "./content/about";
+import Checkout from "./content/checkout";
 import Carrito from "./content/carrito";
 import Contacto from "./content/contacto";
 import ListItemContainer from "./content/list-item-container";
@@ -20,12 +20,12 @@ function App() {
       <Navbar/>
       <Routes>
         <Route element={<ListItemContainer/>} path="/"/>
-        <Route element={<About/>} path="/About"/>
         <Route element={<Contacto/>} path="/Contacto"/>
         <Route element={<Carrito/>} path="/Carrito"/>
         <Route element={<DetailItem/>} path="/Producto/:id"/>
         <Route element={<Categoria/>} path="/Categorias/:categoria"/>
         <Route element={<Carrito/>} path="/Carrito"/>
+        <Route element={<Checkout/>} path="/Checkout"/>
       </Routes>
     </BrowserRouter>
     </>

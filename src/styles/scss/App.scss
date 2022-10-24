@@ -74,4 +74,13 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.bi-trash{font-size: 1.2rem;}
+.bi-trash{
+    font-size: 1.2rem;
+}
+
+.finalizar-compra{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

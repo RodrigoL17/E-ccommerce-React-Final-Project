@@ -1,4 +1,4 @@
-    
+import Swal from "sweetalert2"
 // const consultarAPI = async () => {
 //     const response = await fetch("https://dummyjson.com/products");
 //     const data  = await response.json();
@@ -6,3 +6,15 @@
 // }
 //  export {consultarAPI}
 
+const confirmacionDeCompra = ()=> {
+    Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: "Tu compra se ha realizado con exito",
+        showConfirmButton: false,
+        timer: 1500
+      })
+}
+
+  export {confirmacionDeCompra}

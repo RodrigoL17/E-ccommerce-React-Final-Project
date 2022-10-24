@@ -26,6 +26,11 @@ const CarritoProvider = (props) => {
         setCarrito([...aux]) 
     }
 
+
+    const vaciarCarrito = () => {
+        setCarrito([])
+    }
+
     return (
         <>
             <CarritoContext.Provider value={{carrito, agregarAlCarrito, quitarProducto}}>

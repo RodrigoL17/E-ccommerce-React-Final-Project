@@ -4,7 +4,6 @@ import Card from "../layout/card";
 
 const ListItemContainer = () => {
   const [productos, setProductos] = useState([]);
-  const [idProducto, setIdProducto] = useState([]);
   
   useEffect(() => {
     getProductos().then(prods => {
