@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import '../src/styles/index.css';
 import App from './components/App';
 import { CarritoProvider } from './context/carritoContext';
+// import "./utilities/cargaBDD.js"
 
 
 

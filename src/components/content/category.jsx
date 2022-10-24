@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {consultarAPI} from "../../utilities/funciones_utiles";
+import { getProductos } from "../../utilities/firebase";
 import Card from "../layout/card";
 
 const Category = () => {
   const [productos, setProductos] = useState([]);
   const {categoria} = useParams()
+  
   useEffect(() => {
-   consultarAPI().then(prod => {
-    const resultado = prod.filter(producto => producto.category === categoria.toLowerCase())
+   getProductos().then(prods => {
+    const products = prods.map(prod => prod[1])
+    const resultado = products.filter(producto => producto.category === categoria.toLowerCase())
     setProductos(resultado)
    })
   }, [categoria]);

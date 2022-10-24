@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import { consultarAPI } from "../../utilities/funciones_utiles";
+import { getProductos } from "../../utilities/firebase";
 import Carousel from "../layout/carousel/carousel";
 import Rating from "../layout/Rating/rating";
 import ButtonGroup from "../layout/button-group";
@@ -12,8 +12,9 @@ const DetailItem = () => {
 
   
   useEffect(() => {
-    consultarAPI().then((productos) => {
-      const prodBuscado = productos.find(
+    getProductos().then((prods) => {
+      const products = prods.map(prod => prod[1])
+      const prodBuscado = products.find(
         (productoArray) => productoArray.id === parseInt(id)
       );
       setProducto(prodBuscado);

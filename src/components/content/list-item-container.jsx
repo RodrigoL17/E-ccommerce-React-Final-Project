@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
-import {consultarAPI} from "../../utilities/funciones_utiles";
+import { getProductos } from "../../utilities/firebase";
 import Card from "../layout/card";
 
 const ListItemContainer = () => {
   const [productos, setProductos] = useState([]);
+  const [idProducto, setIdProducto] = useState([]);
+  
   useEffect(() => {
-    consultarAPI().then(prod => {
-      setProductos(prod)});
+    getProductos().then(prods => {
+      const products = prods.map(prod => prod[1])
+      setProductos(products);
+      });
+      
   }, []);
   return (
     <div className="row list-item-container">
