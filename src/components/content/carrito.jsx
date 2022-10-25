@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { CarritoContext } from "../../context/carritoContext";
 
 const Carrito = () => {
-  const { carrito, quitarProducto} = useContext(CarritoContext);
+  const { carrito, quitarProducto } = useContext(CarritoContext);
   const [carritoLocal, setCarritoLocal] = useState([]);
-  const [ total, setTotal] = useState(0)
+  const [total, setTotal] = useState(0);
   useEffect(() => {
-    const sumaTotal = carrito.map((prod) => parseInt(prod.price) * parseInt(prod.cantidad))
+    const sumaTotal = carrito.map(
+      (prod) => parseInt(prod.price) * parseInt(prod.cantidad)
+    );
     const prodMostrar = carrito.map((prod) => (
       <div className="card card-producto" key={`${prod.id}`}>
         <img src={prod.images[0]} alt={prod.title} className="card-img mt-2" />
@@ -35,24 +37,27 @@ const Carrito = () => {
           <i className="bi bi-trash"></i>
         </button>
       </div>
-      
     ));
-    if(sumaTotal.length !== 0){
-      const valorTotal = sumaTotal.reduce((a,b)=> a + b)
-      setTotal(valorTotal)
-    } 
+    if (sumaTotal.length !== 0) {
+      const valorTotal = sumaTotal.reduce((a, b) => a + b);
+      setTotal(valorTotal);
+    }
     setCarritoLocal(prodMostrar);
-    
   }, [carrito]);
   return carritoLocal.length !== 0 ? (
     <>
-      <h1 className="text-center text-primary">Estos son los productos de tu carrito</h1>
+      <h1 className="text-center text-primary">
+        Estos son los productos de tu carrito
+      </h1>
       <div className="row list-item-container">{carritoLocal}</div>
       <div className="finalizar-compra">
-        <h2 className="text-center">Total a pagar:<span className="fw-bold text-primary"> ${total}</span></h2>
-        <Link className="btn btn-outline-primary" to="/Checkout">Completar Datos</Link>
+        <h2 className="text-center">
+          Total a pagar:<span className="fw-bold text-primary"> ${total}</span>
+        </h2>
+        <Link className="btn btn-outline-primary" to="/Checkout">
+          Completar Datos
+        </Link>
       </div>
-      
     </>
   ) : (
     <div className="mt-3 d-flex flex-column align-items-center">

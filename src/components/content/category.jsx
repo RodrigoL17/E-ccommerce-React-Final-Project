@@ -5,32 +5,29 @@ import Card from "../layout/card";
 
 const Category = () => {
   const [productos, setProductos] = useState([]);
-  const {categoria} = useParams()
-  
+  const { categoria } = useParams();
+
   useEffect(() => {
-   getProductos().then(prods => {
-    const products = prods.map(prod => prod[1])
-    const resultado = products.filter(producto => producto.category === categoria.toLowerCase())
-    setProductos(resultado)
-   })
+    getProductos().then((prods) => {
+      const resultado = prods.filter(
+        (prod) => prod[1].category === categoria.toLowerCase()
+      );
+      setProductos(resultado);
+    });
   }, [categoria]);
 
   return (
     <div className="row list-item-container">
-      {productos.map(
-        ({ images, title, brand, description, price, stock, id }) => (
-          <Card
-            img={images}
-            titulo={title}
-            marca={brand}
-            descripcion={description}
-            precio={price}
-            stock={stock}
-            id={id}
-            key={id}
-          />
-        )
-      )}
+      {productos.map((prod) => (
+        <Card
+          img={prod[1].images}
+          titulo={prod[1].title}
+          marca={prod[1].brand}
+          precio={prod[1].price}
+          id={prod[0]}
+          key={prod[1].id}
+        />
+      ))}
     </div>
   );
 };

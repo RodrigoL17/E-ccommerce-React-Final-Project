@@ -1,18 +1,23 @@
-import React, {useContext} from 'react';
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { confirmacionDeCompra } from '../../utilities/funciones_utiles';
-import { CarritoContext } from '../../context/carritoContext';
+import { confirmacionDeCompra } from "../../utilities/funciones_utiles";
+import { CarritoContext } from "../../context/carritoContext";
 
 const Checkout = () => {
-    const {vaciarCarrito} = useContext(CarritoContext);
+  const { vaciarCarrito } = useContext(CarritoContext);
 
-    return (
-        <>
-             <div className="col-11 ms-5 mt-5 mb-5 formulario">
-        <h2 className="text-center text-primary">Para finalizar tu compra completa los siguientes datos</h2>
+  return (
+    <>
+      <div className="col-11 ms-5 mt-5 mb-5 formulario">
+        <h2 className="text-center text-primary">
+          Para finalizar tu compra completa los siguientes datos
+        </h2>
         <div className="mb-3">
-          <label htmlFor="exampleFormControlInput1" className="form-label text-primary">
-           Nombre
+          <label
+            htmlFor="exampleFormControlInput1"
+            className="form-label text-primary"
+          >
+            Nombre
           </label>
           <input
             type="email"
@@ -22,7 +27,10 @@ const Checkout = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleFormControlInput1" className="form-label text-primary">
+          <label
+            htmlFor="exampleFormControlInput1"
+            className="form-label text-primary"
+          >
             Apellido
           </label>
           <input
@@ -33,7 +41,10 @@ const Checkout = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleFormControlInput1" className="form-label text-primary">
+          <label
+            htmlFor="exampleFormControlInput1"
+            className="form-label text-primary"
+          >
             Dirección de Mail
           </label>
           <input
@@ -44,7 +55,10 @@ const Checkout = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleFormControlInput1" className="form-label text-primary">
+          <label
+            htmlFor="exampleFormControlInput1"
+            className="form-label text-primary"
+          >
             Confirmación Mail
           </label>
           <input
@@ -55,7 +69,10 @@ const Checkout = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleFormControlInput2" className="form-label text-primary">
+          <label
+            htmlFor="exampleFormControlInput2"
+            className="form-label text-primary"
+          >
             Teléfono
           </label>
           <input
@@ -66,13 +83,24 @@ const Checkout = () => {
           />
         </div>
         <div className="botones-formulario">
-        <Link type="button" className="btn btn-outline-primary" to="/Carrito">Volver</Link>
-        <Link type="button" className="btn btn-outline-primary" onClick={() => {confirmacionDeCompra(); vaciarCarrito();
- }} to="/">Finalizar Compra</Link>
+          <Link type="button" className="btn btn-outline-primary" to="/Carrito">
+            Volver
+          </Link>
+          <Link
+            type="button"
+            className="btn btn-outline-primary"
+            onClick={() => {
+              confirmacionDeCompra();
+              vaciarCarrito();
+            }}
+            to="/"
+          >
+            Finalizar Compra
+          </Link>
         </div>
       </div>
-        </>
-    );
-}
+    </>
+  );
+};
 
 export default Checkout;

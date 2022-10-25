@@ -4,30 +4,23 @@ import Card from "../layout/card";
 
 const ListItemContainer = () => {
   const [productos, setProductos] = useState([]);
-  
+
   useEffect(() => {
-    getProductos().then(prods => {
-      const products = prods.map(prod => prod[1])
-      setProductos(products);
-      });
-      
-  }, []);
-  return (
-    <div className="row list-item-container">
-      {productos?.map(({ images, title, brand, description, price, stock,id}) => (
+    getProductos().then((prods) => {
+      const products = prods.map((prod) => (
         <Card
-          img={images}
-          titulo={title}
-          marca={brand}
-          descripcion={description}
-          precio={price}
-          stock={stock}
-          id={id}
-          key={id}
+          img={prod[1].images}
+          titulo={prod[1].title}
+          marca={prod[1].brand}
+          precio={prod[1].price}
+          id={prod[0]}
+          key={prod[1].id}
         />
-      ))}
-    </div>
-  );
+      ));
+      setProductos(products);
+    });
+  }, []);
+  return <div className="row list-item-container">{productos}</div>;
 };
 
 export default ListItemContainer;
