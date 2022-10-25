@@ -63,7 +63,12 @@ const updateProducto = async (id, info) => {
 };
 
 const crearOrden = async (carrito) => {
-  await addDoc(collection(db, "ordenesDeCompra"), {carrito})
+  const orden = await addDoc(collection(db, "ordenesDeCompra"), {carrito})
+  return orden.id
 }
+
+
+
+
 
 export { cargarBaseDeDatos, getProductos, updateProducto, getProducto, crearOrden };

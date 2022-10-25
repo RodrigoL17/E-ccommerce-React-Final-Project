@@ -48,7 +48,7 @@ const Carrito = () => {
   return carritoLocal.length !== 0 ? (
     <>
       <div className="carrito">
-        <h1 className="text-center text-primary">
+        <h1 className="text-center text-primary pt-2">
           Estos son los productos de tu carrito
         </h1>
         <div className="row list-item-container">{carritoLocal}</div>

@@ -1,4 +1,4 @@
-import React, { useContext,useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { confirmacionDeCompra } from "../../utilities/funciones_utiles";
 import { CarritoContext } from "../../context/carritoContext";
@@ -6,16 +6,21 @@ import { crearOrden } from "../../utilities/firebase";
 
 const Checkout = () => {
   const { vaciarCarrito, carrito } = useContext(CarritoContext);
-const navigate = useNavigate()
-const [carritoLocal, setCarritoLoc] = useState([]);
+  const navigate = useNavigate();
+  const [carritoLocal, setCarritoLocal] = useState([]);
 
-const onClick =  () => {
-    confirmacionDeCompra()
-    // await crearOrden(carrito)
-    setTimeout(() => {navigate("/")},1000)
-    vaciarCarrito()
-    
-}
+  useEffect(() => {
+    setCarritoLocal(carrito);
+  }, [carrito]);
+
+  const onClick = async () => {
+    const orden = await crearOrden(carritoLocal);
+    confirmacionDeCompra(orden)
+    setTimeout(() => {
+      navigate("/");
+    }, 2500);
+    vaciarCarrito();
+  };
 
   return (
     <>
@@ -31,7 +36,7 @@ const onClick =  () => {
             Nombre
           </label>
           <input
-            type="email"
+            type="text"
             className="form-control text-dark input-contacto"
             id="exampleFormControlInput1"
             placeholder="Rodrigo"
@@ -45,7 +50,7 @@ const onClick =  () => {
             Apellido
           </label>
           <input
-            type="email"
+            type="text"
             className="form-control text-dark input-contacto"
             id="exampleFormControlInput1"
             placeholder="Lezama"
@@ -100,7 +105,7 @@ const onClick =  () => {
           <Link
             type="button"
             className="btn btn-outline-primary"
-            onClick={(e) => onClick(e)}
+            onClick={() => onClick()}
           >
             Finalizar Compra
           </Link>
