@@ -44,26 +44,29 @@ const Carrito = () => {
     }
     setCarritoLocal(prodMostrar);
   }, [carrito]);
+
   return carritoLocal.length !== 0 ? (
     <>
-      <h1 className="text-center text-primary">
-        Estos son los productos de tu carrito
-      </h1>
-      <div className="row list-item-container">{carritoLocal}</div>
-      <div className="finalizar-compra">
-        <h2 className="text-center">
-          Total a pagar:<span className="fw-bold text-primary"> ${total}</span>
-        </h2>
-        <Link className="btn btn-outline-primary" to="/Checkout">
-          Completar Datos
-        </Link>
+      <div className="carrito">
+        <h1 className="text-center text-primary">
+          Estos son los productos de tu carrito
+        </h1>
+        <div className="row list-item-container">{carritoLocal}</div>
+        <div className="finalizar-compra">
+          <h2 className="text-center">
+            Total a pagar:
+            <span className="fw-bold text-primary"> ${total}</span>
+          </h2>
+          <Link className="btn btn-outline-primary mb-4" to="/Checkout">
+            Continuar con la compra
+          </Link>
+        </div>
       </div>
     </>
   ) : (
     <div className="mt-3 d-flex flex-column align-items-center">
-      <h2 className="text-center">
-        El carrito aún no contiene ningun producto
-      </h2>
+      <h2 className="text-center">El carrito está vacio</h2>
+      <i className="bi bi-emoji-frown-fill"></i>
       <Link className="btn btn-outline-primary btn-sm" to="/">
         Dirigete a la tienda <i className="bi bi-house-fill"></i>
       </Link>

@@ -17,4 +17,5 @@ const confirmacionDeCompra = () => {
   });
 };
 
+
 export { confirmacionDeCompra };

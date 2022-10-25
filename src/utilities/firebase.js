@@ -62,4 +62,8 @@ const updateProducto = async (id, info) => {
   return estado;
 };
 
-export { cargarBaseDeDatos, getProductos, updateProducto, getProducto };
+const crearOrden = async (carrito) => {
+  await addDoc(collection(db, "ordenesDeCompra"), {carrito})
+}
+
+export { cargarBaseDeDatos, getProductos, updateProducto, getProducto, crearOrden };

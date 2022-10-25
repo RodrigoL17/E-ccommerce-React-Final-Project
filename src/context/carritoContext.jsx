@@ -32,7 +32,7 @@ const CarritoProvider = (props) => {
   return (
     <>
       <CarritoContext.Provider
-        value={{ carrito, agregarAlCarrito, quitarProducto }}
+        value={{ carrito, agregarAlCarrito, quitarProducto, vaciarCarrito }}
       >
         {props.children}
       </CarritoContext.Provider>

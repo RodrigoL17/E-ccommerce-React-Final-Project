@@ -1,10 +1,21 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext,useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { confirmacionDeCompra } from "../../utilities/funciones_utiles";
 import { CarritoContext } from "../../context/carritoContext";
+import { crearOrden } from "../../utilities/firebase";
 
 const Checkout = () => {
-  const { vaciarCarrito } = useContext(CarritoContext);
+  const { vaciarCarrito, carrito } = useContext(CarritoContext);
+const navigate = useNavigate()
+const [carritoLocal, setCarritoLoc] = useState([]);
+
+const onClick =  () => {
+    confirmacionDeCompra()
+    // await crearOrden(carrito)
+    setTimeout(() => {navigate("/")},1000)
+    vaciarCarrito()
+    
+}
 
   return (
     <>
@@ -89,11 +100,7 @@ const Checkout = () => {
           <Link
             type="button"
             className="btn btn-outline-primary"
-            onClick={() => {
-              confirmacionDeCompra();
-              vaciarCarrito();
-            }}
-            to="/"
+            onClick={(e) => onClick(e)}
           >
             Finalizar Compra
           </Link>
