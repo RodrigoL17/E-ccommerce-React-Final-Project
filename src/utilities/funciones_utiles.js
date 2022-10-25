@@ -2,12 +2,15 @@ import Swal from "sweetalert2";
 
 const confirmacionDeCompra = (id) => {
   Swal.fire({
-    toast: true,
-    position: "top-end",
+    position: "center",
     icon: "success",
-    title: `Tu compra, con codigo:" ${id} ", se ha realizado con exito`,
+    iconColor:"#099a00",
+    title: `Muchas gracias por elegirnos!!`,
+    footer:`Tu compra, codigo:" ${id} ", se ha realizado con exito`,
     showConfirmButton: false,
     timer: 4000,
+    background: "#ddffdd",
+    color: "#000000"
   });
 };
 
